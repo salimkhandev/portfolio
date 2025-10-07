@@ -71,7 +71,7 @@ const Home = () => {
             </div>
             
             {/* Dotted spinning border - clear visibility */}
-            <div className="absolute inset-[-5px] rounded-full border-4 border-dotted border-yellow-400 animate-spin-slow-reverse"></div>
+            {/* <div className="absolute inset-[-5px] rounded-full border-4 border-dotted border-yellow-400 animate-spin-slow-reverse"></div> */}
           </div>
         </motion.div>
 

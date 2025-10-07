@@ -89,7 +89,7 @@ const Contact = () => {
                             {[
                                 { icon: faWhatsapp, href: "https://wa.me/923201970649", color: "hover:text-green-400" },
                                 { icon: faGithub, href: "http://github.com/salimkhandev", color: "hover:text-gray-400" },
-                                { icon: faLinkedin, href: "https://www.linkedin.com/in/salim-khan-969492256", color: "hover:text-blue-400" }
+                                { icon: faLinkedin, href: "https://www.linkedin.com/in/salimkhandev", color: "hover:text-blue-400" }
                             ].map((social, index) => (
                                 <a
                                     key={index}

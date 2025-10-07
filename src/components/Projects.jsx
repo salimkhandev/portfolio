@@ -20,24 +20,7 @@ const Projects = () => {
       technologies: ["React", "Node.js", "Material-UI", "Tailwind CSS", "JWT", "Bcryptjs", "Postgresql", "Redis", "Storage Bucket (supabase)","Skeletion Loaders", "Formik", "Yup","Piechart.js"],
       image: "/techIcons/projectScreenshot/schoolmng.png"
     },
-    {
-      title: "Push Notifications",
-      description: "Send background and foreground push notification to desktops, Iphone and android devices , in bulk or individually.",
-      link: "https://firebase-fcm2.vercel.app",
-      githubLink: "https://github.com/salimkhandev/Firebase-FCM",
-      technologies: ["Firebase", "FCM", "React"],
-      image: "/techIcons/projectScreenshot/fcm.png"
 
-    },
-    {
-      title: "offline attendance system (PWA)",
-      description: "Mark attendance offline using persistent IndexedDB. When the internet is back, data is automatically sent to the server.",
-      link: "https://pwa-frontend-123.vercel.app/attendance",
-
-      githubLink: "https://github.com/salimkhandev/pwa-master",
-      technologies: ["React", "PWA", "push notification", "IndexedDB", "bgSync"],
-      image: "/techIcons/projectScreenshot/fullPwa.png"
-    },
     {
       title: "TaskTame",
       description: "Use and install it offline on any OS",
