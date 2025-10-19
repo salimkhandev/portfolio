@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 /**
  * @typedef {Object} ColorPreset
@@ -115,7 +115,7 @@ const CursorTrail = ({
         const currentDensity = Math.max(1, Math.round(density * speedFactor));
 
         const newParticles = Array.from({ length: currentDensity }).map((_, i) => ({
-            id: Date.now() + i,
+            id: `${Date.now()}-${Math.random()}-${i}`,
             x: e.clientX + (Math.random() * 20 - 10),
             y: e.clientY + (Math.random() * 20 - 10),
             size: Math.random() * (sizeRange[1] - sizeRange[0]) + sizeRange[0],

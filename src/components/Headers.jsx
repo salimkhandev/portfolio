@@ -1,4 +1,4 @@
-import { faBars, faEnvelope, faHome, faLaptop, faProjectDiagram, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHome, faProjectDiagram, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
@@ -67,9 +67,7 @@ const Header = () => {
               {[
                 { href: "#home", text: "Home", icon: faHome },
                 { href: "#about", text: "About", icon: faUser },
-                { href: "#projects", text: "Projects", icon: faProjectDiagram },
-                { href: "#contact", text: "Contact", icon: faEnvelope },
-                { href: "#va", text: "VA", icon: faLaptop }
+                { href: "#projects", text: "Projects", icon: faProjectDiagram }
               ].map((item, index) => (
                 <li key={index}
                   className={`w-full transform transition-all duration-300 delay-[${index * 100}ms] ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
@@ -102,9 +100,7 @@ const Header = () => {
           {[
             { href: "#home", text: "Home", icon: faHome },
             { href: "#about", text: "About", icon: faUser },
-            { href: "#projects", text: "Projects", icon: faProjectDiagram },
-            { href: "#contact", text: "Contact", icon: faEnvelope },
-            { href: "#va", text: "VA", icon: faLaptop }
+            { href: "#projects", text: "Projects", icon: faProjectDiagram }
           ].map((item, index) => (
             <li key={index}>
               {(

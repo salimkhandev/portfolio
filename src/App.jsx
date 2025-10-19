@@ -3,13 +3,13 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import About from './components/About';
 import AdminPanel from './components/AdminPanel';
-import Contact from './components/Contact';
 import CursorTrail from './components/CursorTrail';
+import FloatingChat from './components/FloatingChat';
+import FloatingContact from './components/FloatingContact';
 import Headers from './components/Headers';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import SplashScreen from './components/SplashScreen';
-import VirtualAssistant from './components/VirtualAssistant';
 // import My3DBackground from './components/My3DBackground';
 function App() {
   const [showSplash, setShowSplash] = useState(false);
@@ -73,9 +73,9 @@ function App() {
                     <Home />
                     <About />
                     <Projects />
-                    <Contact />
-                    <VirtualAssistant />
                     <CursorTrail />
+                    <FloatingChat />
+                    <FloatingContact />
                     {/* <My3DBackground /> */}
                   </>
                 } />
