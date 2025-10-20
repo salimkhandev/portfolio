@@ -152,7 +152,7 @@ function FloatingChat() {
     else if (width < 1024) {
       return {
         width: "480px",
-        height: "580px",
+        height: Math.min(height * 0.5, 400), // Use height variable for responsive sizing
         bottom: "90px",
         right: "20px",
         left: "auto",
@@ -162,7 +162,7 @@ function FloatingChat() {
     else if (width < 1440) {
       return {
         width: "500px",
-        height: "600px",
+        height: Math.min(height * 0.45, 380), // Use height variable for responsive sizing
         bottom: "90px",
         right: "20px",
         left: "auto",
@@ -172,7 +172,7 @@ function FloatingChat() {
     else {
       return {
         width: "520px",
-        height: "620px",
+        height: "520px",
         bottom: "90px",
         right: "20px",
         left: "auto",
