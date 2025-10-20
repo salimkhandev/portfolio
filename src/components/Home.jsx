@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { ReactTyped } from "react-typed";
-import OptimizedImage from "./OptimizedImage";
 
 const Home = () => {
   useEffect(() => {
@@ -63,10 +62,11 @@ const Home = () => {
             {/* Profile image container with fixed dimensions - no scaling applied here */}
             <div className="absolute inset-[20px] rounded-full overflow-hidden">
               {/* Only the image itself scales on hover (not the container) */}
-              <OptimizedImage
+              <img
                 src="/profilePic.webp"
-                className="absolute inset-0 hover:scale-110 transition-transform duration-500 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 alt="Salim Khan"
+                loading="lazy"
                 style={{ transformOrigin: "center" }}
               />
             </div>

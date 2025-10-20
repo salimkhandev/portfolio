@@ -2,7 +2,6 @@ import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import OptimizedImage from "./OptimizedImage";
 
 const Project = ({
   title,
@@ -30,10 +29,11 @@ const Project = ({
       {/* Optional project image */}
       {image && (
         <div className="w-[100%] px-2 sm:px-4 pt-2 sm:pt-4 overflow-hidden">
-          <OptimizedImage
+          <img
             src={image}
             alt={title}
-            className="transform transition-transform duration-700"
+            loading="lazy"
+            className="w-full h-auto object-cover transform transition-transform duration-700"
             style={{
               aspectRatio: "16/9",
             }}
