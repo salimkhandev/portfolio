@@ -14,6 +14,7 @@ const headerConfig = {
   botName: "Salim's Assistant",
   botAvatar: "https://avatars.githubusercontent.com/u/147515973?v=4",
   botDescription: "Your virtual assistant for all things support.",
+  textColor: "white",
 
   phone: {
     title: "Call Support",
@@ -58,6 +59,7 @@ function FloatingChat() {
     botName: "Salim's Assistant",
     botAvatar: profilePic,
     botDescription: "Your virtual assistant for all things support.",
+    textColor: "white",
   };
 
   const enrichedMessages = useMemo(
@@ -200,10 +202,11 @@ function FloatingChat() {
           top: windowSize.width < 480 ? "0" : "auto",
           borderRadius: windowSize.width < 480 ? "0" : "12px",
           overflow: "hidden",
-          backgroundColor: "#111827",
+          backgroundColor: "#0d1424",
           boxShadow:
             windowSize.width < 480 ? "none" : "0px 4px 20px rgba(0,0,0,0.3)",
           zIndex: 9998,
+          color: "white",
           transition: "width 0.3s, height 0.3s, border-radius 0.3s",
         }}
       >
@@ -218,7 +221,7 @@ function FloatingChat() {
             position: windowSize.width < 480 ? "sticky" : "relative",
             top: windowSize.width < 480 ? "0" : "auto",
             zIndex: windowSize.width < 480 ? "1" : "auto",
-            backgroundColor: "#111827",
+            backgroundColor: "#0d1424",
           }}
         />
         <MessageList
@@ -229,6 +232,9 @@ function FloatingChat() {
           showMarquee={true}
           messages={enrichedMessages}
           sendMessage={client?.sendMessage}
+          style={{
+            color: "white",
+          }}
         />
         <Composer
           disableComposer={false}
@@ -238,6 +244,7 @@ function FloatingChat() {
           sendMessage={client?.sendMessage}
           uploadFile={client?.uploadFile}
           composerPlaceholder="Type a message..."
+          style={{ color: "white" }}
         />
       </Container>
 
