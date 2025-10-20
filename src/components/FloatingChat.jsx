@@ -7,7 +7,7 @@ import {
   Fab,
 } from "@botpress/webchat";
 import { useState, useMemo, useEffect, useRef } from "react";
-import Swal from "sweetalert2";
+
 import profilePic from "/profilePic.webp";
 
 const headerConfig = {
@@ -116,49 +116,9 @@ function FloatingChat() {
   }, [isWebchatOpen]);
 
   useEffect(() => {
-    // Show attention-grabbing alert for virtual assistant after a short delay
-    const timer = setTimeout(() => {
-      if (
-        !isWebchatOpen &&
-        !localStorage.getItem("assistant_notification_shown")
-      ) {
-        Swal.fire({
-          title: "Chat with Salim's Virtual Assistant!",
-          html: "<div style='margin-bottom:10px'>Ask about my skills, projects, or experience!</div><div style='font-size:12px;opacity:0.7'>I can answer your questions and help you navigate my portfolio</div>",
-          imageUrl: "/profilePic.webp",
-          imageWidth: 100,
-          imageHeight: 100,
-          imageAlt: "Salim Khan",
-          showConfirmButton: true,
-          confirmButtonText: "<i class='fa fa-comments'></i> Chat Now",
-          confirmButtonColor: "#4F46E5",
-          showCancelButton: true,
-          cancelButtonText: "Maybe Later",
-          background: "#0F172A",
-          color: "white",
-          customClass: {
-            popup: "animated fadeInDown faster",
-            title: "text-blue-400",
-          },
-          showClass: {
-            popup: "animate__animated animate__fadeInDown animate__faster",
-          },
-          hideClass: {
-            popup: "animate__animated animate__fadeOutUp animate__faster",
-          },
-          backdrop: `rgba(10, 17, 34, 0.8)`,
-          allowOutsideClick: true,
-        }).then((result) => {
-          if (result.isConfirmed) {
-            setIsWebchatOpen(true);
-          }
-          // Mark as shown in localStorage so it doesn't appear again in this session
-          localStorage.setItem("assistant_notification_shown", "true");
-        });
-      }
-    }, 3000);
-
-    return () => clearTimeout(timer);
+    // Initial popup notification has been removed
+    // Nothing to do here, but keeping the useEffect for potential future usage
+    return () => {};
   }, []);
 
   // Calculate responsive dimensions

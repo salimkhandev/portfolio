@@ -7,7 +7,6 @@ import {
   BufferGeometry,
   Color,
   Fog,
-  Group,
   Vector3,
   AdditiveBlending,
   MathUtils,
