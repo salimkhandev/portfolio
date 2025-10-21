@@ -10,8 +10,21 @@ import { useState } from "react";
 
 const FloatingContact = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const email = "salimkhandev@gmail.com"; // Your email address
+
+  const emailLink = isMobile
+    ? `mailto:${email}` // 📱 Mobile → opens default email app
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`; // 💻 Desktop → opens Gmail web
 
   const socialLinks = [
+    {
+      icon: faEnvelope,
+      href: emailLink,
+      color: "hover:text-green-400",
+      label: "Email",
+    },
     {
       icon: faWhatsapp,
       href: "https://wa.me/923201970649",
