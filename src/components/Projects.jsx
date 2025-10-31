@@ -21,6 +21,24 @@ const Projects = () => {
       image: "/techIcons/projectScreenshot/schoolmng.png"
     },
     {
+      title: "All Talk (not online but you can use it on localhost as this require serverfull server)",
+      description: "All Talk is a real-time chat and calling (Video/Audio) app built with React, Socket.IO, WebRTC, Express, Supabase, and Redis. It supports private and group messaging with online presence and typing indicators, one-to-one audio/video calls (TURN/STUN), secure JWT auth with httpOnly cookies and auto‑login, push notifications via FCM, media uploads and profile photos, and an installable PWA for mobile. The backend enforces CORS and rate limiting, uses Redis to route live events reliably, and persists users and tokens in Supabase (Postgres)",
+      link: "https://chatters-socket-frontend.vercel.app",
+      githubLink: "https://github.com/salimkhandev/ChattersSocket",
+      technologies : [
+        "React (Vite)",
+        "Socket.IO",
+        "Express",
+        "Supabase (Postgres)",
+        "Redis",
+        "WebRTC",
+        "Firebase Admin FCM",
+        "Cloudinary / Multer for media",
+        "JWT auth with httpOnly cookies"
+      ],
+      image: "/techIcons/projectScreenshot/alltalk.jpg"
+    },
+    {
       title: "TuneFlow",
       description: "TuneFlow is a modern, responsive music web app built with Next.js. It features fast search, playlists, theming, a mobile-friendly player, and offline-friendly PWA capabilities. The app leverages a clean UI with Radix UI components and Tailwind CSS, global state via Redux Toolkit, and optional auth with NextAuth..",
       link: "https://tune-flow-a-music-app.vercel.app",
