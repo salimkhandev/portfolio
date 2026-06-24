@@ -7,7 +7,7 @@ const projectRoutes = require("./routes/projectRoutes.js");
 const skillRoutes = require("./routes/skillRoutes.js");
 const rateLimit = require("express-rate-limit");
 const chatRoutes = require("./routes/chatRoutes.js");
-const { connectDB } = require("./config/db.js");
+const { connectDB, mongoose } = require("./config/db.js");
 const cloudinary = require("./config/cloudinary");
 
 const app = express();
@@ -106,6 +106,20 @@ const chatLimiter = rateLimit({
     standardHeaders: true,
     legacyHeaders: false,
     message: { success: false, message: "Too many requests. Please try again later." }
+});
+
+app.get("/api/keep-alive", async (req, res) => {
+    // Optional: Protect the route
+    if (process.env.CRON_SECRET && req.headers["authorization"] !== `Bearer ${process.env.CRON_SECRET}`) {
+        return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+        await connectDB();
+        await mongoose.connection.db.command({ ping: 1 });
+        res.status(200).json({ success: true, message: "DB is alive!" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 app.use("/api/chat", chatLimiter, chatRoutes);
