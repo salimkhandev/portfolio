@@ -4,9 +4,16 @@ const handleChat = async (req, res) => {
   try {
     const { message, history = [], imageBase64, mimeType } = req.body;
 
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return res.status(500).json({ success: false, message: "Gemini API key is missing." });
+    const apiKeys = process.env.GEMINI_API_KEYS 
+      ? process.env.GEMINI_API_KEYS.split(',').map(key => key.trim()).filter(Boolean)
+      : [];
+      
+    if (process.env.GEMINI_API_KEY) {
+      apiKeys.unshift(process.env.GEMINI_API_KEY);
+    }
+
+    if (apiKeys.length === 0) {
+      return res.status(500).json({ success: false, message: "Gemini API keys are missing." });
     }
 
     // Keep only the last 12 messages
@@ -61,19 +68,7 @@ CRITICAL INSTRUCTION: Do NOT use em dashes or long hyphens (—) in your respons
       contents: contents
     };
 
-    const apiKeys = [
-      process.env.GEMINI_API_KEY,
-      "AIzaSyDHviI1Uy4eaOW8vQdko_nkyrwg0Q0MeM0",
-      "AIzaSyBi3jvmfVP_o7CsuaBio8GVCXtVYV1bj6g",
-      "AIzaSyADlHuGpNMAGDBfi9J6cIiT2sQizEVuPDk",
-      "AIzaSyBPQKXBqjVcPekaSQbTZ7_zP0y_YZr1qIQ",
-      "AIzaSyDnk_4f4PuDcwhcxFcOWFoaOGeYYazBPFM",
-      "AIzaSyDJWux4EvsyVAiavu11vnC4Fsq4thRhlrE",
-      "AIzaSyBM6N7QZpxs_n7JiMWzZuEF4mN-Qh2kihs",
-      "AIzaSyBl0T5sXXKUjpDBhifwVkWX8WT-1yWzRk4",
-      "AIzaSyC1rSi5b3AfsZJTOZCy6wvFk2EFTcFVkhU",
-      "AIzaSyDr2xXoxRVcA35vIVmWxwkRGn3PKcR_7J0"
-    ].filter(Boolean);
+    // apiKeys are already initialized at the start of the function
 
     if (apiKeys.length === 0) {
       return res.status(500).json({ success: false, message: "Gemini API keys are missing." });
