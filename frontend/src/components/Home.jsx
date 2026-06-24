@@ -58,6 +58,7 @@ const Home = () => {
               Hi, I&apos;m{" "}
               <span className="font-semibold text-black">Salim Khan</span>,
               a professional Full Stack Developer with expertise in building scalable, modern web applications.
+              Graduated in <span className="font-semibold text-black">BS Software Engineering</span>.
             </p>
           </div>
 

@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes.js");
 const projectRoutes = require("./routes/projectRoutes.js");
 const skillRoutes = require("./routes/skillRoutes.js");
+const rateLimit = require("express-rate-limit");
 const chatRoutes = require("./routes/chatRoutes.js");
 const { connectDB } = require("./config/db.js");
 const cloudinary = require("./config/cloudinary");
@@ -98,7 +99,16 @@ app.post("/api/cloudinary-signature", express.json(), (req, res) => {
     }
 });
 
-app.use("/api/chat", chatRoutes);
+// 30 requests per IP per 15 min to protect Gemini key pool
+const chatLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 30,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { success: false, message: "Too many requests. Please try again later." }
+});
+
+app.use("/api/chat", chatLimiter, chatRoutes);
 app.use('/api', ensureDBConnection);
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
