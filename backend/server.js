@@ -109,14 +109,10 @@ const chatLimiter = rateLimit({
 });
 
 app.get("/api/keep-alive", async (req, res) => {
-    // Optional: Protect the route
-    if (process.env.CRON_SECRET && req.headers["authorization"] !== `Bearer ${process.env.CRON_SECRET}`) {
-        return res.status(401).json({ error: "Unauthorized" });
-    }
     try {
         await connectDB();
         await mongoose.connection.db.command({ ping: 1 });
-        res.status(200).json({ success: true, message: "DB is alive!" });
+        res.status(200).json({ success: true });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
