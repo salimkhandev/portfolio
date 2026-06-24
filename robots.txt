@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /sitemap.xml
-Disallow: /admin
-Disallow: /admin/
-
-Sitemap: https://salimkhandev.vercel.app/sitemap.xml
