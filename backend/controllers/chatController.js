@@ -78,7 +78,7 @@ CRITICAL INSTRUCTION: Do NOT use em dashes or long hyphens (—) in your respons
     let lastStatus = 500;
 
     for (const key of apiKeys) {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${key}`;
 
       try {
         const response = await global.fetch(url, {
