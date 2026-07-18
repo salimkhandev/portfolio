@@ -2,7 +2,7 @@ import { faImage, faPaperPlane, faTimes, faRobot, faUser } from "@fortawesome/fr
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import profilePic from "/image-prof-github.png";
+import profilePic from "/image-prof-github.webp";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL 
   ? (import.meta.env.VITE_API_BASE_URL.endsWith('/api') ? import.meta.env.VITE_API_BASE_URL : `${import.meta.env.VITE_API_BASE_URL}/api`)

@@ -32,7 +32,7 @@ const Home = () => {
             {/* Profile image container */}
             <div className="absolute inset-[6px] rounded-full overflow-hidden">
               <img
-                src="/image-prof-github.png"
+                src="/image-prof-github.webp"
                 className="w-full h-full object-cover"
                 alt="Salim Khan"
                 loading="lazy"
