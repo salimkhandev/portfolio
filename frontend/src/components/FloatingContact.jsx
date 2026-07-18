@@ -4,7 +4,7 @@ import {
   faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -75,7 +75,7 @@ const FloatingContact = () => {
             />
           </svg>
         ) : (
-          <FontAwesomeIcon icon={faEnvelope} className="w-8 h-8 mx-auto" />
+          <FontAwesomeIcon icon={faPhone} className="w-8 h-8 mx-auto" />
         )}
       </button>
 
