@@ -8,7 +8,7 @@ async function run() {
     await connectDB();
     const result = await Project.updateOne(
       { title: { $regex: /ChattersSocket/i } },
-      { $set: { deployedUrl: 'https://chatters-socket-frontend.vercel.app' } }
+      { $unset: { deployedUrl: '' } }
     );
     console.log('Update result:', result);
     process.exit(0);
