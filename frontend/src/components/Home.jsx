@@ -32,9 +32,9 @@ const Home = () => {
             {/* Profile image container */}
             <div className="absolute inset-[6px] rounded-full overflow-hidden">
               <img
-                src="/image-prof-github.webp"
+                src="/mk.png"
                 className="w-full h-full object-cover"
-                alt="Salim Khan"
+                alt="Muhammad Khalil"
                 loading="lazy"
               />
             </div>
@@ -44,7 +44,7 @@ const Home = () => {
         {/* Name and title */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-black">
-            Salim Khan
+            Muhammad Khalil
           </h1>
 
           <div className="flex justify-center items-center">
@@ -56,7 +56,7 @@ const Home = () => {
           <div className="max-w-2xl mx-auto">
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
               Hi, I&apos;m{" "}
-              <span className="font-semibold text-black">Salim Khan</span>,
+              <span className="font-semibold text-black">Muhammad Khalil</span>,
               a professional Full Stack Developer with expertise in building scalable, modern web applications.
               Graduated in <span className="font-semibold text-black">BS Software Engineering</span>.
             </p>
