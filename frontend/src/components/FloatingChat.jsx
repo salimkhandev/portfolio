@@ -121,12 +121,12 @@ function FloatingChat() {
       if (data.success) {
         setMessages(prev => [...prev, { role: 'model', text: data.reply }]);
       } else {
-        setMessages(prev => [...prev, { role: 'model', text: "some troubile in the connection , pleary retry again now" }]);
+        setMessages(prev => [...prev, { role: 'model', text: "There was a connection issue. Please try again." }]);
         setInputText(userMsg.text);
       }
     } catch (error) {
       console.error("Chat error:", error);
-      setMessages(prev => [...prev, { role: 'model', text: "some troubile in the connection , pleary retry again now" }]);
+      setMessages(prev => [...prev, { role: 'model', text: "There was a connection issue. Please try again." }]);
       setInputText(userMsg.text);
     } finally {
       setIsLoading(false);
