@@ -34,7 +34,7 @@ function App() {
       <ProjectsProvider>
         <SkillsProvider>
           <Router>
-            <div className="bg-dotted relative min-h-screen">
+            <div className="bg-dotted relative min-h-screen pb-20 md:pb-24">
               {showSplash ? (
                 <SplashScreen />
               ) : (

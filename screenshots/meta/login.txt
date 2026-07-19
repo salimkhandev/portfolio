@@ -1,0 +1,6 @@
+Route: /login
+Desktop screenshot: screenshots/desktop/login-desktop.png
+Mobile screenshot:  screenshots/mobile/login-mobile.png
+Component file: src/components/Login.jsx
+CSS file: src/index.css
+Auth required: none

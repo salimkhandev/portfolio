@@ -1,0 +1,6 @@
+Route: /admin
+Desktop screenshot: screenshots/desktop/admin-panel-desktop.png
+Mobile screenshot:  screenshots/mobile/admin-panel-mobile.png
+Component file: src/components/AdminPanel.jsx
+CSS file: src/index.css
+Auth required: none

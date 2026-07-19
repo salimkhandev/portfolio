@@ -1,0 +1,6 @@
+Route: /dashboard
+Desktop screenshot: screenshots/desktop/dashboard-desktop.png
+Mobile screenshot:  screenshots/mobile/dashboard-mobile.png
+Component file: src/components/UnifiedDashboard.jsx
+CSS file: src/index.css
+Auth required: admin

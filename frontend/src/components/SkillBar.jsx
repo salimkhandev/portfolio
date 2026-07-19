@@ -196,25 +196,25 @@ const Skills = () => {
           )}
 
           {skillsData.length > 0 && (
-            <div className="max-w-4xl mx-auto w-full p-4 sm:p-6 md:p-8 relative z-0">
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-6 md:gap-8 relative">
+            <div className="max-w-5xl mx-auto w-full p-4 sm:p-6 md:p-8 relative z-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 relative">
                 {skillsData.map((skill, index) => {
                   return (
                     <div
                       key={skill._id || index}
                       data-aos="fade-up"
                       data-aos-delay={index * 50}
-                      className="skill-item flex flex-col items-center min-w-0"
+                      className="skill-item flex flex-col items-center min-w-0 bg-white/40 hover:bg-white/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-gray-200/60 hover:border-blue-200 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                      onClick={() => {
+                        if (skill.topics?.length > 0) {
+                          setExpandedSkill(expandedSkill === skill._id ? null : skill._id);
+                        }
+                      }}
                       style={{
                         position: 'relative',
                         zIndex: expandedSkill === skill._id ? 10000 : 'auto'
                       }}
                     >
-                      {/* Title above icon */}
-                      <p className="text-[10px] sm:text-sm md:text-base font-medium text-black/90 hover:text-black text-center mb-1 sm:mb-1 md:mb-2 w-full truncate px-1">
-                        {skill.name}
-                      </p>
-
                       {/* Icon and Button Container - static position */}
                       <div
                         className="relative w-full flex flex-col items-center"
@@ -222,14 +222,14 @@ const Skills = () => {
                         onMouseLeave={() => !isMobile && setHoveredSkill(null)}
                       >
                         {/* Icon */}
-                        <div
-                          className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
-                          onClick={() => {
-                            setExpandedSkill(expandedSkill === skill._id ? null : skill._id);
-                          }}
-                        >
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-3">
                           <SkillIcon skill={skill} />
                         </div>
+
+                        {/* Title below icon */}
+                        <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-600 group-hover:text-black text-center mb-2 w-full truncate px-1 transition-colors duration-300">
+                          {skill.name}
+                        </p>
 
                         {/* Expand Icon Button - only show if topics exist */}
                         {skill.topics?.length > 0 && (
@@ -238,12 +238,12 @@ const Skills = () => {
                               e.stopPropagation();
                               setExpandedSkill(expandedSkill === skill._id ? null : skill._id);
                             }}
-                            className="mt-1 w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 bg-gray-500 hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors border border-gray-400"
+                            className="mt-1 w-6 h-6 sm:w-7 sm:h-7 bg-gray-100 group-hover:bg-blue-50 hover:!bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 border border-transparent group-hover:border-blue-200 text-gray-400 group-hover:text-blue-500"
                             title={expandedSkill === skill._id ? "Hide topics" : "Show topics"}
                           >
                             {expandedSkill === skill._id
-                              ? <HiChevronUp className="text-white text-[10px] sm:text-xs md:text-sm" />
-                              : <HiChevronDown className="text-white text-[10px] sm:text-xs md:text-sm" />
+                              ? <HiChevronUp className="text-current text-sm sm:text-base" />
+                              : <HiChevronDown className="text-current text-sm sm:text-base" />
                             }
                           </button>
                         )}

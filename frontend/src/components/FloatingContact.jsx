@@ -56,13 +56,13 @@ const FloatingContact = () => {
       {/* Floating Contact Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 left-6 pointer-events-auto w-16 h-16 bg-black hover:bg-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+        className="fixed bottom-4 left-4 md:bottom-6 md:left-6 pointer-events-auto w-12 h-12 md:w-14 md:h-14 bg-black/90 backdrop-blur-md border border-white/20 hover:bg-gray-900 text-white rounded-full shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 focus:outline-none flex items-center justify-center group"
         aria-label={isOpen ? "Close contact options" : "Open contact options"}
-        style={{ zIndex: 9999 }}
+        style={{ zIndex: 9000 }}
       >
         {isOpen ? (
           <svg
-            className="w-8 h-8 mx-auto"
+            className="w-5 h-5 md:w-6 md:h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -75,15 +75,15 @@ const FloatingContact = () => {
             />
           </svg>
         ) : (
-          <FontAwesomeIcon icon={faPhone} className="w-8 h-8 mx-auto" />
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300" />
         )}
       </button>
 
       {/* Contact Options Panel */}
       {isOpen && (
         <div
-          className="fixed bottom-24 left-6 pointer-events-auto bg-white shadow-md rounded-sm border border-gray-300 p-4"
-          style={{ zIndex: 9998 }}
+          className="fixed bottom-20 left-4 md:bottom-24 md:left-6 pointer-events-auto bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200 p-4 min-w-[200px]"
+          style={{ zIndex: 8999 }}
         >
           <div className="text-center mb-3">
             <h3 className="text-gray-800 font-semibold text-sm">Get in Touch</h3>

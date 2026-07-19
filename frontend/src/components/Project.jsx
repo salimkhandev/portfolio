@@ -117,7 +117,7 @@ const Project = ({
     <div
       data-aos="fade-up"
       data-aos-delay={index * 100}
-      className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 transition-all duration-500 hover:bg-gray-50 hover:scale-[1.02] hover:shadow-2xl"
+      className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] hover:border-gray-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -219,9 +219,9 @@ const Project = ({
               <HiLightBulb className="w-3 h-3" style={{ color: '#1f2937' }} />
               <span className="font-semibold">Features:</span>
             </div>
-            <ul className="list-disc list-inside pl-4 space-y-1">
+            <ul className="list-disc list-inside pl-2 sm:pl-4 space-y-1.5 mt-1">
               {features.slice(0, 3).map((feature, i) => (
-                <li key={i} className="text-[10px] sm:text-xs text-gray-600">
+                <li key={i} className="text-[11px] sm:text-xs text-gray-600 leading-relaxed">
                   {feature}
                 </li>
               ))}
@@ -241,7 +241,7 @@ const Project = ({
               {technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-full bg-gray-100 text-gray-800 border border-gray-200"
+                  className="px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-medium rounded-md bg-slate-50 text-slate-700 border border-slate-200 shadow-sm hover:shadow-md transition-shadow cursor-default"
                 >
                   {tech}
                 </span>

@@ -280,26 +280,12 @@ function FloatingChat() {
       <div
         onClick={toggleChat}
         style={{
-          position: "fixed",
-          bottom: "20px",
-          right: isMobile ? "10px" : "20px",
-          width: isMobile ? "56px" : "64px",
-          height: isMobile ? "56px" : "64px",
-          backgroundColor: "#000000",
-          color: "white",
-          zIndex: isOpen && isMobile ? "0" : "9999",
+          zIndex: isOpen && isMobile ? "0" : "9000",
           opacity: isOpen && isMobile ? "0" : "1",
-          transition: "all 0.3s ease",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "50%",
-          cursor: "pointer",
         }}
-        className="hover:scale-105"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-black/90 backdrop-blur-md border border-white/20 text-white rounded-full shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center cursor-pointer group"
       >
-        <FontAwesomeIcon icon={faRobot} className="text-2xl" />
+        <FontAwesomeIcon icon={faRobot} className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300" />
       </div>
     </>
   );
