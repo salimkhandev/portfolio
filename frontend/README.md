@@ -243,7 +243,7 @@ This project is licensed under the ISC License.
 
 ## 👤 Author
 
-**Muhammad Khalil**
+**Salim Khan**
 - Software Engineering student at Islamia College University Peshawar
 - Portfolio: [Your Portfolio URL]
 - GitHub: [Your GitHub URL]
