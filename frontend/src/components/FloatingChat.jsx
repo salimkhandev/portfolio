@@ -2,7 +2,7 @@ import { faImage, faPaperPlane, faTimes, faRobot, faUser } from "@fortawesome/fr
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import profilePic from "/mk.png";
+import profilePic from "/image-prof-github.webp";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL 
   ? (import.meta.env.VITE_API_BASE_URL.endsWith('/api') ? import.meta.env.VITE_API_BASE_URL : `${import.meta.env.VITE_API_BASE_URL}/api`)
@@ -11,7 +11,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'model', text: "Hi! I'm Muhammad Khalil's Assistant. How can I help you today? Feel free to ask about his skills or upload a screenshot of your problem!" }
+    { role: 'model', text: "Hi! I'm Salim Khan's Assistant. How can I help you today? Feel free to ask about his skills or upload a screenshot of your problem!" }
   ]);
   const [inputText, setInputText] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
@@ -159,9 +159,9 @@ function FloatingChat() {
         {/* Header */}
         <div className="flex items-center justify-between p-4 bg-black text-white">
           <div className="flex items-center gap-3">
-            <img src={profilePic} alt="Muhammad Khalil" className="w-10 h-10 rounded-full border-2 border-gray-600 object-cover" />
+            <img src={profilePic} alt="Salim Khan" className="w-10 h-10 rounded-full border-2 border-gray-600 object-cover" />
             <div>
-              <h3 className="font-bold text-sm">Muhammad Khalil&apos;s Assistant</h3>
+              <h3 className="font-bold text-sm">Salim Khan&apos;s Assistant</h3>
             </div>
           </div>
           <button onClick={toggleChat} className="text-gray-300 hover:text-white p-2">
@@ -178,7 +178,7 @@ function FloatingChat() {
                   {msg.role === 'user' ? (
                     <FontAwesomeIcon icon={faUser} className="text-white text-xs" />
                   ) : (
-                    <img src={profilePic} alt="Muhammad Khalil" className="w-full h-full object-cover" />
+                    <img src={profilePic} alt="Salim Khan" className="w-full h-full object-cover" />
                   )}
                 </div>
                 <div className={`p-3 rounded-2xl ${msg.role === 'user' ? 'bg-blue-600 text-white rounded-tr-none' : 'bg-white text-black border border-gray-200 rounded-tl-none shadow-sm'}`}>
